@@ -55,6 +55,30 @@ app.get("/api/posts", (req, res) => {
   });
 });
 
+app.get("/api/posts/user/:user_id", (req, res) => {
+  const userId = req.params.user_id;
+
+  const query = `
+    SELECT posts.id AS post_id, posts.name AS post_name, posts.user_id, 
+    users.name AS user_name, users.description AS user_description
+    FROM posts
+    JOIN users ON posts.user_id = users.id
+    WHERE posts.user_id = ?;
+  `;
+
+  db.all(query, [userId], (err, rows) => {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+
+    if (rows.length === 0) {
+      return res.status(404).json({ error: "No posts found for this user." });
+    }
+
+    res.json(rows);
+  });
+});
+
 app.post("/api/items", (req, res) => {
   const { name, description } = req.body;
   if (!name) {

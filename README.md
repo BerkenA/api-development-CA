@@ -25,15 +25,15 @@ This project consists of a backend API built using Node.js and Express, which in
    npm start
 The API will be available at http://localhost:3000.
 
-##Frontend
+## Frontend
 1. Host the static webpage on a platform like Render, Netlify, or GitHub Pages.
 2. Make sure the frontend sends API requests to the correct backend URL.
 
-##Deployment
+## Deployment
 - Backend: Deployed on Render.
 - Frontend: You can deploy the static webpage on Render or any other platform that supports static websites.
 
-##Endpoints
+## Endpoints
 
 POST /api/users: Create a new user.
 POST /api/posts: Create a new post.
@@ -43,6 +43,6 @@ POST /api/items: Create a new item.
 GET /api/items: Fetch all items.
 DELETE /api/posts/:id: Delete a post.
 
-Troubleshooting
+## Troubleshooting
 CORS errors: Make sure the origin in the backend CORS configuration matches the deployed frontend URL.
 

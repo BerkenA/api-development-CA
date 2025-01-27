@@ -1,6 +1,6 @@
 const container = document.getElementById("Posts");
 
-fetch("http://localhost:3000/api/posts")
+fetch("https://api-development-ca.onrender.com/api/posts")
   .then((response) => response.json())
   .then((data) => {
     data.forEach((post) => {

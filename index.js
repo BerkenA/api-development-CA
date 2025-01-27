@@ -4,9 +4,16 @@ const db = require("./db");
 const cors = require("cors");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-app.use(cors({ origin: "http://127.0.0.1:5500" }));
+app.use(
+  cors({
+    origin: [
+      "https://api-development-ca.onrender.com",
+      "https://berks-games.netlify.app",
+    ],
+  })
+);
 app.use(bodyParser.json());
 
 app.post("/api/users", (req, res) => {
@@ -31,7 +38,6 @@ app.post("/api/posts", (req, res) => {
   }
 
   const query = "INSERT INTO posts (name, user_id) VALUES (?, ?)";
-
   db.run(query, [name, user_id], function (err) {
     if (err) {
       return res.status(500).json({ error: err.message });
@@ -124,5 +130,5 @@ app.use((req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on https://api-development-ca.onrender.com`);
 });

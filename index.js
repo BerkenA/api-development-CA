@@ -10,7 +10,7 @@ app.use(
   cors({
     origin: [
       "https://api-development-ca.onrender.com",
-      "https://api-development-ca-1.onrender.com/",
+      "https://api-development-ca-1.onrender.com",
     ],
   })
 );

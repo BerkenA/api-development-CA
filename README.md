@@ -35,13 +35,14 @@ The API will be available at http://localhost:3000.
 
 ## Endpoints
 
-POST /api/users: Create a new user.
-POST /api/posts: Create a new post.
-GET /api/posts: Fetch all posts.
-GET /api/posts/user/:user_id: Fetch posts for a specific user.
-POST /api/items: Create a new item.
-GET /api/items: Fetch all items.
+POST /api/users: Create a new user.  
+POST /api/posts: Create a new post.  
+GET /api/posts: Fetch all posts.  
+GET /api/posts/user/:user_id: Fetch posts for a specific user.  
+POST /api/items: Create a new item.  
+GET /api/items: Fetch all items.  
 DELETE /api/posts/:id: Delete a post.
+
 
 ## Troubleshooting
 CORS errors: Make sure the origin in the backend CORS configuration matches the deployed frontend URL.
